@@ -14,21 +14,5 @@ int main(void) {
 	*/
 	printf("This is a test.\n");
 	printf("Test 1:\n");
-	/*
-	printf("HelloWorld.\n");
-	printf("--------------------------------\n");
-	printf("HelloWorld.\n");
-	printf("--------------------------------\n");
-	printf("HelloWorld.\n");
-	printf("--------------------------------\n");
-	*/
-	/*
-	printf("HelloWorld.\n");
-	printf("--------------------------------\n");
-	printf("HelloWorld.\n");
-	printf("--------------------------------\n");
-	printf("HelloWorld.\n");
-	printf("--------------------------------\n");
-	*/
 	return 0;
 }
