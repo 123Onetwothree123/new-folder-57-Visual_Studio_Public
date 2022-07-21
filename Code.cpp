@@ -3,7 +3,9 @@
 #include <cmath>
 #include <string>
 #include <cstring>
-#include <>
+#include <climits>
+#include <ctime>
+#include <fstream>
 int main(void) {
 	/*
 	printf("HelloWorld.\n");
