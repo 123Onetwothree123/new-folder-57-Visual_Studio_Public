@@ -3,9 +3,6 @@
 #include <cmath>
 #include <string>
 #include <cstring>
-#include <climits>
-#include <ctime>
-#include <fstream>
 int main(void) {
 	/*
 	printf("HelloWorld.\n");
@@ -18,5 +15,6 @@ int main(void) {
 	//Test1:
 	printf("This is a test.\n");
 	printf("Test 1:\n");
+
 	return 0;
 }
