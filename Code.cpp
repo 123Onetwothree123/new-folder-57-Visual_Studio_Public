@@ -15,6 +15,5 @@ int main(void) {
 	//Test1:
 	printf("This is a test.\n");
 	printf("Test 1:\n");
-
 	return 0;
 }
