@@ -25,6 +25,8 @@ int main(void) {
 	std::cin >> n;
 	Test(n);
 	printf("--------------------------------\n");
+
+	printf("--------------------------------\n");
 	printf("Done!\n");
 	return 0;
 }
