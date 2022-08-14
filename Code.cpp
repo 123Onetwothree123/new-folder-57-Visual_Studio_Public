@@ -1,4 +1,9 @@
 #include <iostream>
+const double* f1(const double ar[], int n);
+
+const double* f2(const double[], int);
+
+const double* f3(const double*, int);
 const int ArSize = 8;
 int sum_arr(const int* begin, const int* end);
 int main(void) {
@@ -17,9 +22,21 @@ int sum_arr(const int* begin, const int* end)
 {
 	const int* pt;
 	int total = 0;
-	for (pt =begin; pt!=end;pt++)
+	for (pt = begin; pt != end;pt++)
 	{
 		total = total + *pt;
 	}
 	return total;
+}
+const double* f1(const double* ar, int n)
+{
+	return ar;
+}
+
+const double* f2(const double ar[], int n) {
+	return ar + 1;
+}
+
+const double* f3(const double ar[], int n) {
+	return ar + 2;
 }
