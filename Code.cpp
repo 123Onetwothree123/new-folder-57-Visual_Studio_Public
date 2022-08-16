@@ -6,6 +6,7 @@ const double* f2(const double[], int);
 const double* f3(const double*, int);
 const int ArSize = 8;
 int sum_arr(const int* begin, const int* end);
+inline double square(double x) { return x * x; }
 int main(void) {
 	int cookies[ArSize] = { 1,2,4,8,16,32,64,128 };
 	int sum = sum_arr(cookies, cookies + ArSize);
@@ -24,8 +25,8 @@ int main(void) {
 	std::cout << p2(av, 3) << ": " << *p2(av, 3) << std::endl;
 	const double* (*pa[3])(const double*, int) = { f1,f2,f3 };
 	auto pb = pa;
-	std::cout << "\nUsing an array of pointers to functions:\n";
-	std::cout << " Address Value\n";
+	printf("\nUsing an array of pointers to functions:\n");
+	printf(" Address Value\n");
 	for (int i = 0; i < 3; i++)
 	{
 		std::cout << pa[i](av, 3) << ": " << *pa[i](av, 3) << std::endl;
@@ -40,6 +41,20 @@ int main(void) {
 	std::cout << " Adress Value\n";
 	auto pc = &pa;
 	std::cout << (*pc)[0](av, 3) << ": " << *(*pc)[0](av, 3) << std::endl;
+	const double* (*(*pd)[3])(const double*, int) = &pa;
+	const double* pdb = (*pd)[1](av, 3);
+	std::cout << pdb << ": " << *pdb << std::endl;
+	std::cout << (*(*pd)[2])(av, 3) << ": " << *(*(*pd)[2])(av, 3) << std::endl;
+	printf("-------------------------------------------\n");
+	double a, b;
+	double c = 13.0;
+	a = square(5.0);
+	b = square(4.5 + 7.5);
+	printf("a = %f", a);
+	printf(", b = %f", b);
+	printf(", c squared = %f\n", square(c++));
+	printf("Now c = %f\n", c);
+	printf("-------------------------------------------\n");
 	return 0;
 }
 int sum_arr(const int* begin, const int* end)
