@@ -56,6 +56,7 @@ int main(void) {
 	printf(", c squared = %f\n", square(c++));
 	printf("Now c = %f\n", c);
 	printf("-------------------------------------------\n");
+
 	return 0;
 }
 int sum_arr(const int* begin, const int* end)
