@@ -1,4 +1,5 @@
 #include <iostream>
+#include <string>
 #define SQUARE(X) X*X
 const double* f1(const double ar[], int n);
 
@@ -8,6 +9,13 @@ const double* f3(const double*, int);
 const int ArSize = 8;
 int sum_arr(const int* begin, const int* end);
 inline double square(double x) { return x * x; }
+struct free_throws
+{
+	std::string name;
+	int made;
+	int attempts;
+	float percent;
+};
 int main(void) {
 	int cookies[ArSize] = { 1,2,4,8,16,32,64,128 };
 	int sum = sum_arr(cookies, cookies + ArSize);
