@@ -1,5 +1,7 @@
 #include <iostream>
 #include <string>
+#include <cmath>
+
 #define SQUARE(X) X*X
 const double* f1(const double ar[], int n);
 
