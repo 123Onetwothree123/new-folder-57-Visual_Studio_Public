@@ -1,6 +1,7 @@
 #include <iostream>
 #include <string>
 #include <cmath>
+#include <fstream>
 const int ArSize = 8;
 #define SQUARE(X) X*X
 const double* f1(const double ar[], int n);
@@ -12,6 +13,10 @@ int sum_arr(const int* begin, const int* end);
 inline double square(double x) { return x * x; }
 unsigned long left(unsigned long num, unsigned ct);
 char* left(const char* str, int n = 1);
+template <typename T>
+void Swap(T& a, T& b);
+template <>void Swap<job>(job& j1, job& j2);
+void Show(job& j);
 struct free_throws
 {
 	std::string name;
@@ -19,7 +24,11 @@ struct free_throws
 	int attempts;
 	float percent;
 };
-
+struct job {
+	char name[40];
+	double salary;
+	int floor;
+};
 int main(void) {
 	int cookies[ArSize] = { 1,2,4,8,16,32,64,128 };
 	int sum = sum_arr(cookies, cookies + ArSize);
@@ -68,6 +77,32 @@ int main(void) {
 	printf(", c squared = %f\n", square(c++));
 	printf("Now c = %f\n", c);
 	printf("-------------------------------------------\n");
+	const char* trip = "Hawaii!!";
+	unsigned long n = 12345678;
+	int i;
+	char* temp;
+	for (i = 0; i < 10; i++)
+	{
+		std::cout << left(n, i) << std::endl;
+		temp = left(trip, i);
+		std::cout << temp << std::endl;
+		delete[] temp;
+	}
+	printf("-------------------------------------------\n");
+	std::cout.precision(2);
+	std::cout.setf(std::ios::fixed, std::ios::floatfield);
+	int i = 10, j = 20;
+	std::cout << "i, j=" << i << ", " << j << ".\n";
+	std::cout << "Using compiler-generated int swapper:\n";
+	job sue = { "Susan Yaffee",7300.60,7 };
+	job sidney = { "Sidney Taffee",78060.72,9 };
+	std::cout << "Before job swapping:\n";
+	Show(sue);
+	Show(sidney);
+	Swap(sue, sidney);
+	std::cout << "After job swapping:\n";
+	Show(sue);
+	Show(sidney);
 	return 0;
 }
 int sum_arr(const int* begin, const int* end)
@@ -133,4 +168,24 @@ char* left(const char* str, int n) {
 		p[i++] = '\0';
 	}
 	return p;
+}
+template <typename T>
+void Swap(T& a, T& b) {
+	T temp;
+	temp = a;
+	a = b;
+	b = temp;
+}
+template <>void Swap<job>(job& j1, job& j2) {
+	double t1;
+	int t2;
+	t1 = j1.salary;
+	j1.salary = j2.salary;
+	j2.salary = t1;
+	t2 = j1.floor;
+	j1.floor = j2.floor;
+	j2.floor = t2;
+}
+void Show(job& j) {
+	std::cout << j.name << ": " << j.salary << " on floor " << j.floor << std::endl;
 }
