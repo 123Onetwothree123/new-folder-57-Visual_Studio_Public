@@ -107,8 +107,6 @@ int main(void) {
 	std::cout << "After job swapping:\n";
 	Show(sue);
 	Show(sidney);
-	std::cout.unsetf(std::ios_base::fixed);
-	std::cout.unsetf(std::ios_base::floatfield);
 	printf("-------------------------------------------\n");
 	double Test1 = 0.1234567;
 	std::cout.precision(6);
