@@ -4,6 +4,18 @@
 #include <fstream>
 const int ArSize = 8;
 #define SQUARE(X) X*X
+struct free_throws
+{
+	std::string name;
+	int made;
+	int attempts;
+	float percent;
+};
+struct job {
+	char name[40];
+	double salary;
+	int floor;
+};
 const double* f1(const double ar[], int n);
 
 const double* f2(const double[], int);
@@ -17,18 +29,6 @@ template <typename T>
 void Swap(T& a, T& b);
 template <>void Swap<job>(job& j1, job& j2);
 void Show(job& j);
-struct free_throws
-{
-	std::string name;
-	int made;
-	int attempts;
-	float percent;
-};
-struct job {
-	char name[40];
-	double salary;
-	int floor;
-};
 int main(void) {
 	int cookies[ArSize] = { 1,2,4,8,16,32,64,128 };
 	int sum = sum_arr(cookies, cookies + ArSize);
@@ -91,7 +91,8 @@ int main(void) {
 	printf("-------------------------------------------\n");
 	std::cout.precision(2);
 	std::cout.setf(std::ios::fixed, std::ios::floatfield);
-	int i = 10, j = 20;
+	i = 10;
+	int j = 20;
 	std::cout << "i, j=" << i << ", " << j << ".\n";
 	std::cout << "Using compiler-generated int swapper:\n";
 	job sue = { "Susan Yaffee",7300.60,7 };
