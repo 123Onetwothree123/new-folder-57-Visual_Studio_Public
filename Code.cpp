@@ -107,10 +107,9 @@ int main(void) {
 	std::cout << "After job swapping:\n";
 	Show(sue);
 	Show(sidney);
-	printf("-------------------------------------------\n");
-	double Test1 = 0.1234567;
 	std::cout.precision(6);
-	std::cout << Test1;
+	printf("-------------------------------------------\n");
+
 	return 0;
 }
 int sum_arr(const int* begin, const int* end)
