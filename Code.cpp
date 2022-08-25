@@ -89,6 +89,9 @@ int main(void) {
 		delete[] temp;
 	}
 	printf("-------------------------------------------\n");
+	double TestDouble = 0.123456;
+	std::cout << TestDouble << std::endl;
+	printf("%f\n", TestDouble);
 	std::cout.precision(2);
 	std::cout.setf(std::ios::fixed, std::ios::floatfield);
 	i = 10;
@@ -104,6 +107,12 @@ int main(void) {
 	std::cout << "After job swapping:\n";
 	Show(sue);
 	Show(sidney);
+	std::cout.unsetf(std::ios_base::fixed);
+	std::cout.unsetf(std::ios_base::floatfield);
+	printf("-------------------------------------------\n");
+	double Test1 = 0.1234567;
+	std::cout.precision(6);
+	std::cout << Test1;
 	return 0;
 }
 int sum_arr(const int* begin, const int* end)
