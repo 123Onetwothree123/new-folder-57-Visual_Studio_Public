@@ -110,6 +110,7 @@ int main(void) {
 	std::cout.precision(6);
 	printf("-------------------------------------------\n");
 
+	printf("-------------------------------------------\n");
 	return 0;
 }
 int sum_arr(const int* begin, const int* end)
