@@ -2,6 +2,7 @@
 #include <string>
 #include <cmath>
 #include <fstream>
+#include"coordin.h"
 const int ArSize = 8;
 #define SQUARE(X) X*X
 struct free_throws
