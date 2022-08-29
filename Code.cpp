@@ -113,7 +113,7 @@ int main(void) {
 
 	printf("-------------------------------------------\n");
 	return 0;
-}
+}//Test
 int sum_arr(const int* begin, const int* end)
 {
 	const int* pt;
